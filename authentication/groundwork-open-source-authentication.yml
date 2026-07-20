@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/groundwork-open-source-tcg-openapi-original.yml
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  note: >-
+    The TCG Controller REST API authenticates every protected operation with a
+    pair of required request headers rather than a declared OpenAPI
+    securityScheme. The Swagger 2.0 document models them as required header
+    parameters (GWOS-APP-NAME + GWOS-API-TOKEN); the effective auth model is an
+    apiKey-in-header scheme.
+schemes:
+  - name: GWOS-APP-NAME
+    type: apiKey
+    in: header
+    parameter: GWOS-APP-NAME
+    description: >-
+      Application name registered with the GroundWork Monitor / Foundation
+      server (e.g. the connector's appName). Sent on every protected request.
+    required: true
+    sources: [openapi/groundwork-open-source-tcg-openapi-original.yml]
+  - name: GWOS-API-TOKEN
+    type: apiKey
+    in: header
+    parameter: GWOS-API-TOKEN
+    description: >-
+      API token issued by the GroundWork Foundation server, obtained by the
+      agent/connector at startup. Presented alongside GWOS-APP-NAME to authorize
+      config, inventory, metrics, events and downtime operations.
+    required: true
+    sources: [openapi/groundwork-open-source-tcg-openapi-original.yml]
+unauthenticated_operations:
+  - path: /identity
+    method: GET
+    note: /identity returns only a 200 (no 401) in the spec.
+notes: >-
+  Absent a live public host (GroundWork Monitor is self-hosted per customer) the
+  auth model is derived from the published Swagger 2.0 spec and the TCG SDK
+  README, not from a hosted docs auth page.
