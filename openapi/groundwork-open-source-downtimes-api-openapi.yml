@@ -1,0 +1,61 @@
+swagger: '2.0'
+info:
+  contact: {}
+  title: Groundwork Open Source agent downtimes API
+tags:
+- name: downtimes
+paths:
+  /downtime-clear:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Downtimes to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - downtimes
+  /downtime-set:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Downtimes to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - downtimes

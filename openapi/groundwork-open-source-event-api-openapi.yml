@@ -1,0 +1,88 @@
+swagger: '2.0'
+info:
+  contact: {}
+  title: Groundwork Open Source agent event API
+tags:
+- name: event
+paths:
+  /events:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Alerts to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - event
+  /events-ack:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Alerts to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - event
+  /events-unack:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Alerts to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - event
