@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/groundwork-open-source-tcg-openapi-original.yml
+versioning:
+  scheme: build-info
+  current: null
+  endpoint: GET /version
+  note: >-
+    The Controller reports a build tag/time via GET /version (config.BuildInfo);
+    there is no versioned REST path or media-type version. Releases are tracked
+    as git tags on github.com/gwos/tcg.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    The repo has a `deprecated/` directory (gotocjson) but publishes no formal
+    deprecation policy or RFC 8594 Sunset/Deprecation header support.
+sla:
+  url: null
+status_page: null
+distribution:
+  model: self-hosted
+  note: >-
+    GroundWork Monitor is deployed by each customer; there is no vendor-hosted
+    multi-tenant API, status page, or public SLA. The former marketing site
+    (gwos.com) is no longer serving.
+source_of_truth: https://github.com/gwos/tcg

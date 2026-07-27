@@ -1,0 +1,33 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for GroundWork TCG Controller
+  version: 1.0.0
+extends: openapi/groundwork-open-source-tcg-openapi-original.yml
+actions:
+  - target: $.info
+    update:
+      title: GroundWork TCG Controller API
+      description: >-
+        Transit Connection Generator (TCG) Controller service — an HTTP server
+        for external control of the GroundWork Monitor transit agent (config,
+        inventory, metrics, events, downtimes, lifecycle).
+      contact:
+        name: GroundWork Open Source
+        url: https://github.com/gwos/tcg
+      license:
+        name: MIT
+        url: https://github.com/gwos/tcg/blob/master/LICENSE
+      x-apievangelist-source: https://github.com/gwos/tcg/blob/master/docs/swagger.yaml
+      x-apievangelist-auth: apiKey-in-header (GWOS-APP-NAME + GWOS-API-TOKEN)
+  - target: $.paths['/inventory'].post
+    update:
+      summary: Send inventory to Foundation
+      operationId: sendInventory
+  - target: $.paths['/metrics'].post
+    update:
+      summary: Send metrics to the server
+      operationId: sendMetrics
+  - target: $.paths['/events'].post
+    update:
+      summary: Send events to Foundation
+      operationId: sendEvents

@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/groundwork-open-source-tcg-openapi-original.yml
+standards:
+  - id: openapi-swagger-2.0
+    conforms: true
+    evidence: docs/swagger.yaml is a valid Swagger 2.0 document (17 operations).
+  - id: apikey-header-auth
+    conforms: true
+    evidence: All protected operations require GWOS-APP-NAME + GWOS-API-TOKEN headers.
+  - id: oauth2
+    conforms: false
+    evidence: No oauth2 securityScheme in the spec.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Error bodies are plain strings, not application/problem+json.
+  - id: json-api
+    conforms: false
+  - id: rest-json
+    conforms: true
+    evidence: Requests/responses are application/json over HTTP.
+  - id: prometheus-metrics
+    conforms: partial
+    evidence: >-
+      The JavaScript push example uses prom-client; the Telegraf output plugin
+      (github.com/influxdata/telegraf/plugins/outputs/groundwork) integrates the
+      SDK — metrics interoperate with Prometheus/Telegraf ecosystems, but the
+      Controller API itself is a custom JSON surface.

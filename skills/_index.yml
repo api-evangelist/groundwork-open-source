@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/groundwork-open-source-tcg-openapi-original.yml
+skills:
+  - file: groundwork-open-source-push-inventory-and-metrics.md
+    name: Push inventory and metrics to GroundWork
+    api: openapi/groundwork-open-source-tcg-openapi-original.yml
+    operations: ["POST /inventory", "POST /metrics", "GET /status", "GET /version"]
+  - file: groundwork-open-source-send-and-acknowledge-events.md
+    name: Send and acknowledge GroundWork events
+    api: openapi/groundwork-open-source-tcg-openapi-original.yml
+    operations: ["POST /events", "POST /events-ack", "POST /events-unack", "POST /downtime-set", "POST /downtime-clear"]

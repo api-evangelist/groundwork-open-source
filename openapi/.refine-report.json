@@ -1,0 +1,37 @@
+{
+  "provider": "groundwork-open-source",
+  "sources": [
+    "groundwork-open-source-agent-api-openapi.yml",
+    "groundwork-open-source-alert-api-openapi.yml",
+    "groundwork-open-source-connector-api-openapi.yml",
+    "groundwork-open-source-downtimes-api-openapi.yml",
+    "groundwork-open-source-event-api-openapi.yml",
+    "groundwork-open-source-inventory-api-openapi.yml",
+    "groundwork-open-source-metric-api-openapi.yml",
+    "groundwork-open-source-metrics-api-openapi.yml"
+  ],
+  "outputs": [
+    "groundwork-open-source-agent-api-openapi.yml",
+    "groundwork-open-source-alert-api-openapi.yml",
+    "groundwork-open-source-connector-api-openapi.yml",
+    "groundwork-open-source-downtimes-api-openapi.yml",
+    "groundwork-open-source-event-api-openapi.yml",
+    "groundwork-open-source-inventory-api-openapi.yml",
+    "groundwork-open-source-metric-api-openapi.yml",
+    "groundwork-open-source-metrics-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [
+    "groundwork-open-source-agent-api-openapi.yml: info.version missing",
+    "groundwork-open-source-alert-api-openapi.yml: info.version missing",
+    "groundwork-open-source-connector-api-openapi.yml: info.version missing",
+    "groundwork-open-source-downtimes-api-openapi.yml: info.version missing",
+    "groundwork-open-source-event-api-openapi.yml: info.version missing",
+    "groundwork-open-source-inventory-api-openapi.yml: info.version missing",
+    "groundwork-open-source-metric-api-openapi.yml: info.version missing",
+    "groundwork-open-source-metrics-api-openapi.yml: info.version missing"
+  ],
+  "notes": [],
+  "skipped": []
+}

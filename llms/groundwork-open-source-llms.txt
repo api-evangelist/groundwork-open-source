@@ -1,0 +1,28 @@
+# GroundWork Open Source
+
+> GroundWork Open Source, Inc. builds GroundWork Monitor, an open-source-based IT and network monitoring platform (Nagios Core, Telegraf, Grafana, InfluxDB) for hybrid infrastructure. Its integration layer, the Transit Connection Generator (TCG), exposes a Controller REST API for feeding inventory, metrics, events, and downtimes into the GroundWork Foundation server. The platform is self-hosted; source lives on GitHub under the `gwos` org.
+
+## APIs
+- [TCG Controller API (Swagger 2.0)](https://github.com/gwos/tcg/blob/master/docs/swagger.yaml): 17 operations for agent config, inventory, metrics, events, downtimes, and lifecycle control. Auth via GWOS-APP-NAME + GWOS-API-TOKEN headers.
+
+## Specs
+- [OpenAPI (Swagger 2.0)](openapi/groundwork-open-source-tcg-openapi-original.yml)
+- [Overlay (enhancements)](overlays/groundwork-open-source-tcg-overlay.yaml)
+- [Authentication profile](authentication/groundwork-open-source-authentication.yml)
+- [Error catalog](errors/groundwork-open-source-problem-types.yml)
+- [Conventions](conventions/groundwork-open-source-conventions.yml)
+- [Data model](data-model/groundwork-open-source-data-model.yml)
+- [Lifecycle](lifecycle/groundwork-open-source-lifecycle.yml)
+- [Conformance](conformance/groundwork-open-source-conformance.yml)
+- [MCP tool candidates](mcp/groundwork-open-source-mcp.yml)
+
+## SDKs
+- [TCG Go SDK](https://pkg.go.dev/github.com/gwos/tcg/sdk): `go get github.com/gwos/tcg/sdk`
+- [libtransit (C shared library)](https://github.com/gwos/tcg/tree/master/libtransit)
+
+## Repos
+- [gwos GitHub organization](https://github.com/gwos)
+- [Transit Connection Generator (TCG)](https://github.com/gwos/tcg)
+- [GroundWork Nagios Core fork](https://github.com/gwos/nagioscore)
+- [GroundWork Grafana fork](https://github.com/gwos/grafana)
+- [GroundWork Telegraf fork](https://github.com/gwos/telegraf)

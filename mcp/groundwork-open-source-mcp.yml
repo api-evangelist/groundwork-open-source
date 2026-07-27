@@ -1,0 +1,60 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/groundwork-open-source-tcg-openapi-original.yml
+server:
+  name: groundwork-tcg
+  transport: stdio
+  note: >-
+    No official hosted/remote MCP server is published by GroundWork. This is a
+    candidate tool list derived from the TCG Controller REST operations, one tool
+    per operation, for a self-hosted MCP wrapper.
+tools:
+  - name: configure_agent
+    description: Configure the TCG agent/connector.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /config
+  - name: set_downtime
+    description: Set downtime for hosts/services.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /downtime-set
+  - name: clear_downtime
+    description: Clear downtime for hosts/services.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /downtime-clear
+  - name: send_events
+    description: Send alert/monitoring events to Foundation.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /events
+  - name: ack_events
+    description: Acknowledge events.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /events-ack
+  - name: unack_events
+    description: Un-acknowledge events.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /events-unack
+  - name: send_inventory
+    description: Send host/service inventory to Foundation.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /inventory
+  - name: send_metrics
+    description: Push metrics to the server.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /metrics
+  - name: list_metrics
+    description: Get the list of metrics from the server.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#GET /metrics
+  - name: get_identity
+    description: Get the agent identity.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#GET /identity
+  - name: get_status
+    description: Get connector status.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#GET /status
+  - name: get_stats
+    description: Get agent statistics.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#GET /stats
+  - name: get_version
+    description: Get connector build/version info.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#GET /version
+  - name: start_agent
+    description: Start the transit agent.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /start
+  - name: stop_agent
+    description: Stop the transit agent.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /stop
+  - name: reset_nats
+    description: Reset the NATS transport.
+    source_operation: openapi/groundwork-open-source-tcg-openapi-original.yml#POST /reset-nats

@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/gwos/tcg
+packages:
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/gwos/tcg/sdk
+    url: https://pkg.go.dev/github.com/gwos/tcg/sdk
+    install: go get github.com/gwos/tcg/sdk
+    official: true
+    description: >-
+      TCG SDK — data structures, HTTP clients, and featured packages for
+      integration with GroundWork Monitoring. Zero third-party dependencies.
+    status: 200
+  - language: c
+    registry: source
+    name: libtransit
+    url: https://github.com/gwos/tcg/tree/master/libtransit
+    install: >-
+      go build -buildmode=c-shared -o libtransit/libtransit.so
+      libtransit/libtransit.go
+    official: true
+    description: C shared library binding for the TCG transit agent (built from source).
+notes: >-
+  First-party client tooling ships from the gwos/tcg repository. The Go SDK is
+  the only library published to a public registry (pkg.go.dev). The
+  examples/apm/{pull,push}/{go,java,javascript} directories are integration
+  samples, not distributable packages. The Telegraf `groundwork` output plugin
+  (github.com/influxdata/telegraf/plugins/outputs/groundwork) integrates the SDK
+  but is maintained by InfluxData (third-party).

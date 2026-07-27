@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/groundwork-open-source-tcg-openapi-original.yml
+note: >-
+  Derived from the Swagger 2.0 `definitions`. The Controller surface is control-
+  plane oriented (agent status/identity/stats), so the model is small; the rich
+  monitoring domain (hosts, services, metrics, events) lives in the TCG SDK
+  transit types, not the Controller schema.
+entities:
+  - name: AgentIdentity
+    schema: github_com_gwos_tcg_sdk_transit.AgentIdentity
+    fields: [agentId, appName, appType]
+  - name: AgentStatsExt
+    schema: services.AgentStatsExt
+    fields:
+      - agentId
+      - appName
+      - appType
+      - bytesSent
+      - metricsSent
+      - messagesSent
+      - executionTimeInventory
+      - executionTimeMetrics
+      - lastInventoryRun
+      - lastMetricsRun
+      - lastEventsRun
+      - lastErrors
+      - upSince
+    relationships:
+      - type: has_many
+        target: LogRecord
+        via: lastErrors
+  - name: ConnectorStatusDTO
+    schema: services.ConnectorStatusDTO
+    fields: [connectorStatus, jobId]
+  - name: BuildInfo
+    schema: config.BuildInfo
+    fields: [tag, time]
+  - name: LogRecord
+    schema: logzer.LogRecord
+    fields: []
+relationships:
+  - from: AgentStatsExt
+    to: LogRecord
+    kind: has_many
+    via: lastErrors

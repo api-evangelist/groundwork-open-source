@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/groundwork-open-source-tcg-openapi-original.yml
+format: plain
+envelope:
+  note: >-
+    Error responses are returned as a plain string body (the Swagger schema for
+    401/500 is `type: string`); the TCG Controller does not use RFC 9457
+    application/problem+json.
+problems:
+  - status: 401
+    title: Unauthorized
+    description: >-
+      Returned when GWOS-APP-NAME / GWOS-API-TOKEN headers are missing, invalid,
+      or the token has expired. Applies to all protected operations.
+    remediation: >-
+      Re-fetch a valid API token from the GroundWork Foundation server and resend
+      both auth headers.
+    operations:
+      - POST /config
+      - POST /downtime-clear
+      - POST /downtime-set
+      - POST /events
+      - POST /events-ack
+      - POST /events-unack
+      - POST /inventory
+      - GET /metrics
+      - POST /metrics
+      - POST /reset-nats
+      - POST /start
+      - GET /stats
+      - GET /status
+      - POST /stop
+      - GET /version
+  - status: 500
+    title: Internal server error
+    description: >-
+      Returned by lifecycle/metrics operations when the agent or NATS transport
+      fails to process the request.
+    remediation: >-
+      Inspect connector logs and NATS transport state; retry after the agent
+      recovers.
+    operations:
+      - GET /metrics
+      - POST /reset-nats
+      - POST /start
+      - POST /stop

@@ -1,0 +1,523 @@
+definitions:
+  config.BuildInfo:
+    properties:
+      tag:
+        type: string
+      time:
+        type: string
+    type: object
+  expvar.Int:
+    type: object
+  github_com_gwos_tcg_sdk_transit.AgentIdentity:
+    properties:
+      agentId:
+        type: string
+      appName:
+        type: string
+      appType:
+        type: string
+    type: object
+  logzer.LogRecord:
+    type: object
+  services.AgentStatsExt:
+    properties:
+      agentId:
+        type: string
+      appName:
+        type: string
+      appType:
+        type: string
+      bytesSent:
+        $ref: '#/definitions/expvar.Int'
+      executionTimeInventory:
+        $ref: '#/definitions/expvar.Int'
+      executionTimeMetrics:
+        $ref: '#/definitions/expvar.Int'
+      lastErrors:
+        items:
+          $ref: '#/definitions/logzer.LogRecord'
+        type: array
+      lastEventsRun:
+        $ref: '#/definitions/expvar.Int'
+      lastInventoryRun:
+        $ref: '#/definitions/expvar.Int'
+      lastMetricsRun:
+        $ref: '#/definitions/expvar.Int'
+      messagesSent:
+        $ref: '#/definitions/expvar.Int'
+      metricsSent:
+        $ref: '#/definitions/expvar.Int'
+      upSince:
+        $ref: '#/definitions/expvar.Int'
+    type: object
+  services.ConnectorStatusDTO:
+    properties:
+      connectorStatus:
+        type: string
+      jobId:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /config:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to Agent configure.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - agent
+      - connector
+  /downtime-clear:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Downtimes to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - downtimes
+  /downtime-set:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Downtimes to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - downtimes
+  /events:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Alerts to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - alert
+      - event
+  /events-ack:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Alerts to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - alert
+      - event
+  /events-unack:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Alerts to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - alert
+      - event
+  /identity:
+    get:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to get a TCG agent id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/github_com_gwos_tcg_sdk_transit.AgentIdentity'
+      tags:
+      - agent
+      - connector
+  /inventory:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Inventory to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - inventory
+  /metrics:
+    get:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to get list of metrics from
+        the server.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema: {}
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      tags:
+      - metric
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to send Metrics to Foundation.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - metrics
+  /reset-nats:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to reset NATS queues.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/services.ConnectorStatusDTO'
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      tags:
+      - agent
+      - connector
+  /start:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to start NATS dispatcher.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/services.ConnectorStatusDTO'
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      tags:
+      - agent
+      - connector
+  /stats:
+    get:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to get TCG statistics.
+      parameters:
+      - description: Auth header
+        in: header
+        name: gwos-app-name
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/services.AgentStatsExt'
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - agent
+      - connector
+  /status:
+    get:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to get TCG status.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/services.ConnectorStatusDTO'
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - agent
+      - connector
+  /stop:
+    post:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to stop NATS dispatcher.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/services.ConnectorStatusDTO'
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      tags:
+      - agent
+      - connector
+  /version:
+    get:
+      consumes:
+      - application/json
+      description: The following API endpoint can be used to return actual TCG connector
+        version.
+      parameters:
+      - description: Auth header
+        in: header
+        name: GWOS-APP-NAME
+        required: true
+        type: string
+      - description: Auth header
+        in: header
+        name: GWOS-API-TOKEN
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/config.BuildInfo'
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      tags:
+      - agent
+      - connector
+swagger: "2.0"

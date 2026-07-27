@@ -1,8 +1,29 @@
 aid: groundwork-open-source
 name: Groundwork Open Source
-description: Groundwork Open Source is a company surfaced as a portfolio company of canaan-partners and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  GroundWork Open Source, Inc. builds GroundWork Monitor, an open-source-based IT
+  and network monitoring platform for hybrid infrastructure, assembling Nagios
+  Core, Telegraf, InfluxDB, and Grafana into a unified availability, event, and
+  metrics monitoring product. Its integration layer, the Transit Connection
+  Generator (TCG), exposes a Controller REST API and a Go SDK for feeding host/
+  service inventory, metrics, alert events, and downtime windows into the
+  GroundWork Foundation server. The platform is self-hosted; all source lives on
+  GitHub under the gwos organization (TCG, Nagios Core, Grafana, and Telegraf
+  forks). Surfaced as a portfolio company of Canaan Partners and enriched here
+  from its live GitHub org and published Swagger 2.0 API specification.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://raw.githubusercontent.com/gwos/tcg/master/.github/img/readme_image.png
 url: https://raw.githubusercontent.com/api-evangelist/groundwork-open-source/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,12 +33,132 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Monitoring
+- Network Monitoring
+- IT Infrastructure
+- Observability
+- Metrics
+- Events
+- Open Source
+- Nagios
+apis:
+- aid: groundwork-open-source:groundwork-open-source-agent-api
+  name: Groundwork Open Source agent API
+  description: The agent API from Groundwork Open Source — 8 operation(s) for agent.
+  humanURL: https://github.com/gwos/tcg
+  tags:
+  - agent
+  properties:
+  - type: OpenAPI
+    url: openapi/groundwork-open-source-agent-api-openapi.yml
+- aid: groundwork-open-source:groundwork-open-source-alert-api
+  name: Groundwork Open Source alert API
+  description: The alert API from Groundwork Open Source — 3 operation(s) for alert.
+  humanURL: https://github.com/gwos/tcg
+  tags:
+  - alert
+  properties:
+  - type: OpenAPI
+    url: openapi/groundwork-open-source-alert-api-openapi.yml
+- aid: groundwork-open-source:groundwork-open-source-connector-api
+  name: Groundwork Open Source connector API
+  description: The connector API from Groundwork Open Source — 8 operation(s) for connector.
+  humanURL: https://github.com/gwos/tcg
+  tags:
+  - connector
+  properties:
+  - type: OpenAPI
+    url: openapi/groundwork-open-source-connector-api-openapi.yml
+- aid: groundwork-open-source:groundwork-open-source-downtimes-api
+  name: Groundwork Open Source downtimes API
+  description: The downtimes API from Groundwork Open Source — 2 operation(s) for downtimes.
+  humanURL: https://github.com/gwos/tcg
+  tags:
+  - downtimes
+  properties:
+  - type: OpenAPI
+    url: openapi/groundwork-open-source-downtimes-api-openapi.yml
+- aid: groundwork-open-source:groundwork-open-source-event-api
+  name: Groundwork Open Source event API
+  description: The event API from Groundwork Open Source — 3 operation(s) for event.
+  humanURL: https://github.com/gwos/tcg
+  tags:
+  - event
+  properties:
+  - type: OpenAPI
+    url: openapi/groundwork-open-source-event-api-openapi.yml
+- aid: groundwork-open-source:groundwork-open-source-inventory-api
+  name: Groundwork Open Source inventory API
+  description: The inventory API from Groundwork Open Source — 1 operation(s) for inventory.
+  humanURL: https://github.com/gwos/tcg
+  tags:
+  - inventory
+  properties:
+  - type: OpenAPI
+    url: openapi/groundwork-open-source-inventory-api-openapi.yml
+- aid: groundwork-open-source:groundwork-open-source-metric-api
+  name: Groundwork Open Source metric API
+  description: The metric API from Groundwork Open Source — 1 operation(s) for metric.
+  humanURL: https://github.com/gwos/tcg
+  tags:
+  - metric
+  properties:
+  - type: OpenAPI
+    url: openapi/groundwork-open-source-metric-api-openapi.yml
+- aid: groundwork-open-source:groundwork-open-source-metrics-api
+  name: Groundwork Open Source metrics API
+  description: The metrics API from Groundwork Open Source — 1 operation(s) for metrics.
+  humanURL: https://github.com/gwos/tcg
+  tags:
+  - metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/groundwork-open-source-metrics-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: OpenAPI
+  url: openapi/groundwork-open-source-tcg-openapi-original.yml
+- type: Overlay
+  url: overlays/groundwork-open-source-tcg-overlay.yaml
+- type: Authentication
+  url: authentication/groundwork-open-source-authentication.yml
+- type: ErrorCatalog
+  url: errors/groundwork-open-source-problem-types.yml
+- type: Conventions
+  url: conventions/groundwork-open-source-conventions.yml
+- type: DataModel
+  url: data-model/groundwork-open-source-data-model.yml
+- type: Lifecycle
+  url: lifecycle/groundwork-open-source-lifecycle.yml
+- type: Conformance
+  url: conformance/groundwork-open-source-conformance.yml
+- type: MCPServer
+  url: mcp/groundwork-open-source-mcp.yml
+- type: Packages
+  url: packages/groundwork-open-source-packages.yml
+- type: SDKs
+  url: packages/groundwork-open-source-packages.yml
+- type: LLMsTxt
+  url: llms/groundwork-open-source-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Documentation
+  url: https://github.com/gwos/tcg#readme
+- type: APIReference
+  url: https://github.com/gwos/tcg/blob/master/docs/swagger.yaml
+- type: SourceCode
+  url: https://github.com/gwos/tcg
+- type: GitHubOrganization
+  url: https://github.com/gwos
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

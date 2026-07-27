@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/groundwork-open-source-tcg-openapi-original.yml
+conventions:
+  authentication:
+    style: apiKey-in-header
+    headers: [GWOS-APP-NAME, GWOS-API-TOKEN]
+    ref: authentication/groundwork-open-source-authentication.yml
+  content_type:
+    request: application/json
+    response: application/json
+  transport:
+    note: >-
+      The TCG Controller is an HTTP server (Gin framework) fronting a NATS
+      Streaming transport; the agent buffers and forwards inventory/metrics/
+      events to the GroundWork Foundation server.
+  idempotency:
+    supported: false
+    note: >-
+      No idempotency key is documented for the Controller API. Inventory and
+      metrics submissions are last-writer-wins upserts against Foundation.
+  pagination:
+    supported: false
+    note: No collection-listing endpoints; all operations are agent control or push.
+  versioning:
+    scheme: build-info
+    endpoint: GET /version
+    note: >-
+      GET /version returns the connector build tag/time (config.BuildInfo); the
+      REST surface itself is unversioned (no path or header version).
+  error_envelope:
+    format: plain-string
+    ref: errors/groundwork-open-source-problem-types.yml
+  rate_limit_signal:
+    supported: false
+    note: No rate-limit headers documented.
+notes: >-
+  Cross-cutting semantics derived from the published Swagger 2.0 spec and the TCG
+  README/SDK docs. GroundWork Monitor is self-hosted, so behaviour depends on the
+  operator's deployment.
