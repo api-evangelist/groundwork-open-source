@@ -123,8 +123,13 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: IssueTracker
+  url: https://github.com/gwos/tcg/issues
+- type: License
+  name: MIT
+  url: https://github.com/gwos/tcg/blob/master/LICENSE
 - type: OpenAPI
-  url: openapi/groundwork-open-source-tcg-openapi-original.yml
+  url: openapi/_original/groundwork-open-source-tcg-openapi-original.yml
 - type: Overlay
   url: overlays/groundwork-open-source-tcg-overlay.yaml
 - type: Authentication
