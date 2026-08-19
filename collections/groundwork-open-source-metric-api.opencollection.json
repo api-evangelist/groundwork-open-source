@@ -1,0 +1,38 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groundwork Open Source agent metric API"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "metric",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/metrics",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to get list of metrics from the server."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

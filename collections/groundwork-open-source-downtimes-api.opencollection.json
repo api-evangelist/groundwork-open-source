@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groundwork Open Source agent downtimes API"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "downtimes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /downtime-clear",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/downtime-clear",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to send Downtimes to Foundation."
+        },
+        {
+          "info": {
+            "name": "POST /downtime-set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/downtime-set",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to send Downtimes to Foundation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

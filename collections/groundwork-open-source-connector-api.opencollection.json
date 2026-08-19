@@ -1,0 +1,175 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groundwork Open Source agent connector API"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "connector",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/config",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to Agent configure."
+        },
+        {
+          "info": {
+            "name": "GET /identity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/identity"
+          },
+          "docs": "The following API endpoint can be used to get a TCG agent id"
+        },
+        {
+          "info": {
+            "name": "POST /reset-nats",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/reset-nats",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to reset NATS queues."
+        },
+        {
+          "info": {
+            "name": "POST /start",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/start",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to start NATS dispatcher."
+        },
+        {
+          "info": {
+            "name": "GET /stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/stats",
+            "headers": [
+              {
+                "name": "gwos-app-name",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to get TCG statistics."
+        },
+        {
+          "info": {
+            "name": "GET /status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/status",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to get TCG status."
+        },
+        {
+          "info": {
+            "name": "POST /stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/stop",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to stop NATS dispatcher."
+        },
+        {
+          "info": {
+            "name": "GET /version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/version",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to return actual TCG connector version."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

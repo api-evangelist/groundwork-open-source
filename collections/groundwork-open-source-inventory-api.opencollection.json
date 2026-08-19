@@ -1,0 +1,38 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groundwork Open Source agent inventory API"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "inventory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /inventory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/inventory",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to send Inventory to Foundation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

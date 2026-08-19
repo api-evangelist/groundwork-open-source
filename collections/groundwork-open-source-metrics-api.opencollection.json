@@ -1,0 +1,38 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groundwork Open Source agent metrics API"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/metrics",
+            "headers": [
+              {
+                "name": "GWOS-APP-NAME",
+                "value": ""
+              },
+              {
+                "name": "GWOS-API-TOKEN",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "The following API endpoint can be used to send Metrics to Foundation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
