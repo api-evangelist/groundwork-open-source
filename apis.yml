@@ -41,6 +41,16 @@ tags:
 - IT Infrastructure
 - Observability
 - Metrics
+- Event
+- Open-Source
+- Nagios
+tags_raw:
+- Company
+- Monitoring
+- Network Monitoring
+- IT Infrastructure
+- Observability
+- Metrics
 - Events
 - Open Source
 - Nagios
@@ -50,6 +60,8 @@ apis:
   description: The agent API from Groundwork Open Source — 8 operation(s) for agent.
   humanURL: https://github.com/gwos/tcg
   tags:
+  - Agents
+  tags_raw:
   - agent
   properties:
   - type: OpenAPI
@@ -59,6 +71,8 @@ apis:
   description: The alert API from Groundwork Open Source — 3 operation(s) for alert.
   humanURL: https://github.com/gwos/tcg
   tags:
+  - Alert
+  tags_raw:
   - alert
   properties:
   - type: OpenAPI
@@ -68,6 +82,8 @@ apis:
   description: The connector API from Groundwork Open Source — 8 operation(s) for connector.
   humanURL: https://github.com/gwos/tcg
   tags:
+  - Connector
+  tags_raw:
   - connector
   properties:
   - type: OpenAPI
@@ -77,6 +93,8 @@ apis:
   description: The downtimes API from Groundwork Open Source — 2 operation(s) for downtimes.
   humanURL: https://github.com/gwos/tcg
   tags:
+  - Downtimes
+  tags_raw:
   - downtimes
   properties:
   - type: OpenAPI
@@ -86,6 +104,8 @@ apis:
   description: The event API from Groundwork Open Source — 3 operation(s) for event.
   humanURL: https://github.com/gwos/tcg
   tags:
+  - Event
+  tags_raw:
   - event
   properties:
   - type: OpenAPI
@@ -95,6 +115,8 @@ apis:
   description: The inventory API from Groundwork Open Source — 1 operation(s) for inventory.
   humanURL: https://github.com/gwos/tcg
   tags:
+  - Inventory
+  tags_raw:
   - inventory
   properties:
   - type: OpenAPI
@@ -113,6 +135,8 @@ apis:
   description: The metrics API from Groundwork Open Source — 1 operation(s) for metrics.
   humanURL: https://github.com/gwos/tcg
   tags:
+  - Metrics
+  tags_raw:
   - metrics
   properties:
   - type: OpenAPI
