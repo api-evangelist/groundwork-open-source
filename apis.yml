@@ -77,17 +77,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/groundwork-open-source-alert-api-openapi.yml
-- aid: groundwork-open-source:groundwork-open-source-connector-api
-  name: Groundwork Open Source connector API
-  description: The connector API from Groundwork Open Source — 8 operation(s) for connector.
-  humanURL: https://github.com/gwos/tcg
-  tags:
-  - Connector
-  tags_raw:
-  - connector
-  properties:
-  - type: OpenAPI
-    url: openapi/groundwork-open-source-connector-api-openapi.yml
 - aid: groundwork-open-source:groundwork-open-source-downtimes-api
   name: Groundwork Open Source downtimes API
   description: The downtimes API from Groundwork Open Source — 2 operation(s) for downtimes.
@@ -99,17 +88,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/groundwork-open-source-downtimes-api-openapi.yml
-- aid: groundwork-open-source:groundwork-open-source-event-api
-  name: Groundwork Open Source event API
-  description: The event API from Groundwork Open Source — 3 operation(s) for event.
-  humanURL: https://github.com/gwos/tcg
-  tags:
-  - Event
-  tags_raw:
-  - event
-  properties:
-  - type: OpenAPI
-    url: openapi/groundwork-open-source-event-api-openapi.yml
 - aid: groundwork-open-source:groundwork-open-source-inventory-api
   name: Groundwork Open Source inventory API
   description: The inventory API from Groundwork Open Source — 1 operation(s) for inventory.
