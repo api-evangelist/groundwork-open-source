@@ -11,6 +11,19 @@ description: >-
   GitHub under the gwos organization (TCG, Nagios Core, Grafana, and Telegraf
   forks). Surfaced as a portfolio company of Canaan Partners and enriched here
   from its live GitHub org and published Swagger 2.0 API specification.
+deliveryModel:
+  model: self-hosted
+  license: MIT
+  open_source: true
+  commercial: false
+  callable_host: false
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
