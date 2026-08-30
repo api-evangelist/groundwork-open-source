@@ -73,7 +73,7 @@ apis:
   description: The agent API from Groundwork Open Source — 8 operation(s) for agent.
   humanURL: https://github.com/gwos/tcg
   tags:
-  - Agents
+  - agent
   tags_raw:
   - agent
   properties:
@@ -95,7 +95,7 @@ apis:
   description: The downtimes API from Groundwork Open Source — 2 operation(s) for downtimes.
   humanURL: https://github.com/gwos/tcg
   tags:
-  - Downtimes
+  - downtimes
   tags_raw:
   - downtimes
   properties:
