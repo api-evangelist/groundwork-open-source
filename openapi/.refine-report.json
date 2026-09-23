@@ -1,21 +1,12 @@
 {
   "provider": "groundwork-open-source",
   "sources": [
-    "groundwork-open-source-agent-api-openapi.yml",
-    "groundwork-open-source-alert-api-openapi.yml",
-    "groundwork-open-source-connector-api-openapi.yml",
-    "groundwork-open-source-downtimes-api-openapi.yml",
-    "groundwork-open-source-event-api-openapi.yml",
-    "groundwork-open-source-inventory-api-openapi.yml",
-    "groundwork-open-source-metric-api-openapi.yml",
-    "groundwork-open-source-metrics-api-openapi.yml"
+    "_original/groundwork-open-source-tcg-openapi-original.yml"
   ],
   "outputs": [
     "groundwork-open-source-agent-api-openapi.yml",
     "groundwork-open-source-alert-api-openapi.yml",
-    "groundwork-open-source-connector-api-openapi.yml",
     "groundwork-open-source-downtimes-api-openapi.yml",
-    "groundwork-open-source-event-api-openapi.yml",
     "groundwork-open-source-inventory-api-openapi.yml",
     "groundwork-open-source-metric-api-openapi.yml",
     "groundwork-open-source-metrics-api-openapi.yml"
@@ -23,15 +14,29 @@
   "archived": [],
   "errors": [],
   "warnings": [
-    "groundwork-open-source-agent-api-openapi.yml: info.version missing",
-    "groundwork-open-source-alert-api-openapi.yml: info.version missing",
-    "groundwork-open-source-connector-api-openapi.yml: info.version missing",
-    "groundwork-open-source-downtimes-api-openapi.yml: info.version missing",
-    "groundwork-open-source-event-api-openapi.yml: info.version missing",
-    "groundwork-open-source-inventory-api-openapi.yml: info.version missing",
-    "groundwork-open-source-metric-api-openapi.yml: info.version missing",
-    "groundwork-open-source-metrics-api-openapi.yml: info.version missing"
+    "groundwork-open-source-tcg-openapi-original.yml: info.title missing",
+    "groundwork-open-source-tcg-openapi-original.yml: info.version missing"
   ],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "groundwork-open-source-tcg-openapi-original.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "groundwork-open-source-tcg-openapi-original.yml: declared missing tag: agent",
+    "groundwork-open-source-tcg-openapi-original.yml: declared missing tag: alert",
+    "groundwork-open-source-tcg-openapi-original.yml: declared missing tag: connector",
+    "groundwork-open-source-tcg-openapi-original.yml: declared missing tag: downtimes",
+    "groundwork-open-source-tcg-openapi-original.yml: declared missing tag: event",
+    "groundwork-open-source-tcg-openapi-original.yml: declared missing tag: inventory",
+    "groundwork-open-source-tcg-openapi-original.yml: declared missing tag: metric",
+    "groundwork-open-source-tcg-openapi-original.yml: declared missing tag: metrics",
+    "groundwork-open-source-tcg-openapi-original.yml: multi-axis tagging (8 tags, 6 first tags, 1.69x duplication over 16 operations) \u2014 split on first tag, 11 operations narrowed",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "groundwork-open-source-agent-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groundwork-open-source-alert-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groundwork-open-source-downtimes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groundwork-open-source-inventory-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groundwork-open-source-metric-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groundwork-open-source-metrics-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,293 +1,342 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   contact: {}
-  title: Groundwork Open Source agent API
+  title: Groundwork Open Source Agent API
 tags:
-- name: agent
+- name: Agent
 paths:
   /config:
     post:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to Agent configure.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - agent
+      - Agent
+      summary: Create config
+      x-summary-source: derived
+      operationId: postConfig
+      x-operation-id-source: derived
   /identity:
     get:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to get a TCG agent id
-      produces:
-      - application/json
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/github_com_gwos_tcg_sdk_transit.AgentIdentity'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/github_com_gwos_tcg_sdk_transit.AgentIdentity'
       tags:
-      - agent
+      - Agent
+      summary: Get identity
+      x-summary-source: derived
+      operationId: getIdentity
+      x-operation-id-source: derived
   /reset-nats:
     post:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to reset NATS queues.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/services.ConnectorStatusDTO'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/services.ConnectorStatusDTO'
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
         '500':
           description: Internal server error
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - agent
+      - Agent
+      summary: Create reset nats
+      x-summary-source: derived
+      operationId: postResetNats
+      x-operation-id-source: derived
   /start:
     post:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to start NATS dispatcher.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/services.ConnectorStatusDTO'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/services.ConnectorStatusDTO'
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
         '500':
           description: Internal server error
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - agent
+      - Agent
+      summary: Create start
+      x-summary-source: derived
+      operationId: postStart
+      x-operation-id-source: derived
   /stats:
     get:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to get TCG statistics.
       parameters:
       - description: Auth header
         in: header
         name: gwos-app-name
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/services.AgentStatsExt'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/services.AgentStatsExt'
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - agent
+      - Agent
+      summary: Get stats
+      x-summary-source: derived
+      operationId: getStats
+      x-operation-id-source: derived
   /status:
     get:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to get TCG status.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/services.ConnectorStatusDTO'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/services.ConnectorStatusDTO'
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - agent
+      - Agent
+      summary: Get status
+      x-summary-source: derived
+      operationId: getStatus
+      x-operation-id-source: derived
   /stop:
     post:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to stop NATS dispatcher.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/services.ConnectorStatusDTO'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/services.ConnectorStatusDTO'
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
         '500':
           description: Internal server error
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - agent
+      - Agent
+      summary: Create stop
+      x-summary-source: derived
+      operationId: postStop
+      x-operation-id-source: derived
   /version:
     get:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to return actual TCG connector version.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/config.BuildInfo'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/config.BuildInfo'
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - agent
-definitions:
-  config.BuildInfo:
-    properties:
-      tag:
-        type: string
-      time:
-        type: string
-    type: object
-  services.AgentStatsExt:
-    properties:
-      agentId:
-        type: string
-      appName:
-        type: string
-      appType:
-        type: string
-      bytesSent:
-        $ref: '#/definitions/expvar.Int'
-      executionTimeInventory:
-        $ref: '#/definitions/expvar.Int'
-      executionTimeMetrics:
-        $ref: '#/definitions/expvar.Int'
-      lastErrors:
-        items:
-          $ref: '#/definitions/logzer.LogRecord'
-        type: array
-      lastEventsRun:
-        $ref: '#/definitions/expvar.Int'
-      lastInventoryRun:
-        $ref: '#/definitions/expvar.Int'
-      lastMetricsRun:
-        $ref: '#/definitions/expvar.Int'
-      messagesSent:
-        $ref: '#/definitions/expvar.Int'
-      metricsSent:
-        $ref: '#/definitions/expvar.Int'
-      upSince:
-        $ref: '#/definitions/expvar.Int'
-    type: object
-  expvar.Int:
-    type: object
-  services.ConnectorStatusDTO:
-    properties:
-      connectorStatus:
-        type: string
-      jobId:
-        type: integer
-    type: object
-  logzer.LogRecord:
-    type: object
-  github_com_gwos_tcg_sdk_transit.AgentIdentity:
-    properties:
-      agentId:
-        type: string
-      appName:
-        type: string
-      appType:
-        type: string
-    type: object
+      - Agent
+      summary: Get version
+      x-summary-source: derived
+      operationId: getVersion
+      x-operation-id-source: derived
+components:
+  schemas:
+    expvar.Int:
+      type: object
+    services.AgentStatsExt:
+      properties:
+        agentId:
+          type: string
+        appName:
+          type: string
+        appType:
+          type: string
+        bytesSent:
+          $ref: '#/components/schemas/expvar.Int'
+        executionTimeInventory:
+          $ref: '#/components/schemas/expvar.Int'
+        executionTimeMetrics:
+          $ref: '#/components/schemas/expvar.Int'
+        lastErrors:
+          items:
+            $ref: '#/components/schemas/logzer.LogRecord'
+          type: array
+        lastEventsRun:
+          $ref: '#/components/schemas/expvar.Int'
+        lastInventoryRun:
+          $ref: '#/components/schemas/expvar.Int'
+        lastMetricsRun:
+          $ref: '#/components/schemas/expvar.Int'
+        messagesSent:
+          $ref: '#/components/schemas/expvar.Int'
+        metricsSent:
+          $ref: '#/components/schemas/expvar.Int'
+        upSince:
+          $ref: '#/components/schemas/expvar.Int'
+      type: object
+    services.ConnectorStatusDTO:
+      properties:
+        connectorStatus:
+          type: string
+        jobId:
+          type: integer
+      type: object
+    github_com_gwos_tcg_sdk_transit.AgentIdentity:
+      properties:
+        agentId:
+          type: string
+        appName:
+          type: string
+        appType:
+          type: string
+      type: object
+    config.BuildInfo:
+      properties:
+        tag:
+          type: string
+        time:
+          type: string
+      type: object
+    logzer.LogRecord:
+      type: object

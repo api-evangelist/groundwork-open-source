@@ -1,39 +1,47 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   contact: {}
-  title: Groundwork Open Source agent metric API
+  title: Groundwork Open Source Metric API
 tags:
-- name: metric
+- name: Metric
 paths:
   /metrics:
     get:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to get list of metrics from the server.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
-          schema: {}
+          content:
+            application/json:
+              schema: {}
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
         '500':
           description: Internal server error
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - metric
+      - Metric
+      summary: Get metrics
+      x-summary-source: derived
+      operationId: getMetrics
+      x-operation-id-source: derived

@@ -1,61 +1,69 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   contact: {}
-  title: Groundwork Open Source agent downtimes API
+  title: Groundwork Open Source Downtimes API
 tags:
-- name: downtimes
+- name: Downtimes
 paths:
   /downtime-clear:
     post:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to send Downtimes to Foundation.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - downtimes
+      - Downtimes
+      summary: Create downtime clear
+      x-summary-source: derived
+      operationId: postDowntimeClear
+      x-operation-id-source: derived
   /downtime-set:
     post:
-      consumes:
-      - application/json
       description: The following API endpoint can be used to send Downtimes to Foundation.
       parameters:
       - description: Auth header
         in: header
         name: GWOS-APP-NAME
         required: true
-        type: string
+        schema:
+          type: string
       - description: Auth header
         in: header
         name: GWOS-API-TOKEN
         required: true
-        type: string
-      produces:
-      - application/json
+        schema:
+          type: string
       responses:
         '200':
           description: OK
         '401':
           description: Unauthorized
-          schema:
-            type: string
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
-      - downtimes
+      - Downtimes
+      summary: Create downtime set
+      x-summary-source: derived
+      operationId: postDowntimeSet
+      x-operation-id-source: derived
