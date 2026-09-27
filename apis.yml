@@ -55,7 +55,7 @@ tags:
 - Observability
 - Metrics
 - Event
-- Open-Source
+- Open Source
 - Nagios
 tags_raw:
 - Company
@@ -67,9 +67,10 @@ tags_raw:
 - Events
 - Open Source
 - Nagios
+- Open-Source
 apis:
 - aid: groundwork-open-source:groundwork-open-source-agent-api
-  name: Groundwork Open Source agent API
+  name: Groundwork Open Source Agent API
   description: The agent API from Groundwork Open Source — 8 operation(s) for agent.
   humanURL: https://github.com/gwos/tcg
   tags:
@@ -80,7 +81,7 @@ apis:
   - type: OpenAPI
     url: openapi/groundwork-open-source-agent-api-openapi.yml
 - aid: groundwork-open-source:groundwork-open-source-alert-api
-  name: Groundwork Open Source alert API
+  name: Groundwork Open Source Alert API
   description: The alert API from Groundwork Open Source — 3 operation(s) for alert.
   humanURL: https://github.com/gwos/tcg
   tags:
@@ -91,7 +92,7 @@ apis:
   - type: OpenAPI
     url: openapi/groundwork-open-source-alert-api-openapi.yml
 - aid: groundwork-open-source:groundwork-open-source-downtimes-api
-  name: Groundwork Open Source downtimes API
+  name: Groundwork Open Source Downtimes API
   description: The downtimes API from Groundwork Open Source — 2 operation(s) for downtimes.
   humanURL: https://github.com/gwos/tcg
   tags:
@@ -102,7 +103,7 @@ apis:
   - type: OpenAPI
     url: openapi/groundwork-open-source-downtimes-api-openapi.yml
 - aid: groundwork-open-source:groundwork-open-source-inventory-api
-  name: Groundwork Open Source inventory API
+  name: Groundwork Open Source Inventory API
   description: The inventory API from Groundwork Open Source — 1 operation(s) for inventory.
   humanURL: https://github.com/gwos/tcg
   tags:
@@ -113,7 +114,7 @@ apis:
   - type: OpenAPI
     url: openapi/groundwork-open-source-inventory-api-openapi.yml
 - aid: groundwork-open-source:groundwork-open-source-metric-api
-  name: Groundwork Open Source metric API
+  name: Groundwork Open Source Metric API
   description: The metric API from Groundwork Open Source — 1 operation(s) for metric.
   humanURL: https://github.com/gwos/tcg
   tags:
@@ -122,7 +123,7 @@ apis:
   - type: OpenAPI
     url: openapi/groundwork-open-source-metric-api-openapi.yml
 - aid: groundwork-open-source:groundwork-open-source-metrics-api
-  name: Groundwork Open Source metrics API
+  name: Groundwork Open Source Metrics API
   description: The metrics API from Groundwork Open Source — 1 operation(s) for metrics.
   humanURL: https://github.com/gwos/tcg
   tags:
