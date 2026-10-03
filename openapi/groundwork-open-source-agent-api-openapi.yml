@@ -282,12 +282,7 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    services.ConnectorStatusDTO:
-      properties:
-        connectorStatus:
-          type: string
-        jobId:
-          type: integer
+    expvar.Int:
       type: object
     services.AgentStatsExt:
       properties:
@@ -320,14 +315,21 @@ components:
         upSince:
           $ref: '#/components/schemas/expvar.Int'
       type: object
+    services.ConnectorStatusDTO:
+      properties:
+        connectorStatus:
+          type: string
+        jobId:
+          type: integer
+      type: object
+    logzer.LogRecord:
+      type: object
     config.BuildInfo:
       properties:
         tag:
           type: string
         time:
           type: string
-      type: object
-    expvar.Int:
       type: object
     github_com_gwos_tcg_sdk_transit.AgentIdentity:
       properties:
@@ -337,6 +339,4 @@ components:
           type: string
         appType:
           type: string
-      type: object
-    logzer.LogRecord:
       type: object
