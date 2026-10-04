@@ -1,0 +1,27 @@
+slug: groundwork-open-source
+provider: Groundwork Open Source
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Alert
+  spec_file: groundwork-open-source-alert-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.72
+  evidence: POST /events postEvents Create events; POST /events-ack postEventsAck Create events ack —
+    vendor is an "IT and network monitoring platform ... unified availability, event, and metrics monitoring
+    product"
+  reason: Operations submit and acknowledge monitoring events for an infrastructure monitoring product
+    — IT operations monitoring, not financial-crime or business alerting. Mapped to IT Operations Management
+    (monitoring); ITSM incident handling is a plausible alternative, hence moderate confidence.

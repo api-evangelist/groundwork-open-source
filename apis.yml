@@ -139,6 +139,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/groundwork-open-source-capability-edges.yml
+  name: Groundwork Open Source Business Capability Map
 - type: IssueTracker
   url: https://github.com/gwos/tcg/issues
 - type: License
