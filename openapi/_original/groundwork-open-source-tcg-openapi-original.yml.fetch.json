@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/gwos/tcg/refs/heads/master/docs/swagger.yaml",
+ "requested_url": "https://github.com/gwos/tcg/raw/refs/heads/master/docs/swagger.yaml",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 12427,
+ "sha256": "8142deb4e5f84fcf33931e4b25d2ed9c4abe5e36819c1791b0fd70fecf27a64e",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
