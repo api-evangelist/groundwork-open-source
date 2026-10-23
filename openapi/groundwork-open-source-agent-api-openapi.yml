@@ -340,3 +340,9 @@ components:
         upSince:
           $ref: '#/components/schemas/expvar.Int'
       type: object
+x-provenance:
+  method: harvested
+  publisher: Groundwork Open Source
+  source: https://raw.githubusercontent.com/gwos/tcg/refs/heads/master/docs/swagger.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
